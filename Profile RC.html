@@ -1,368 +1,73 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="./tailwind.config.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ovo&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Profile</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f0f0f;
+      color: white;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    .nav {
+      margin: 30px 0;
+    }
+    .circle-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+    .glow-button {
+      background-color: transparent;
+      border: 2px solid #0ff;
+      color: #0ff;
+      padding: 12px 24px;
+      margin: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 8px;
+      text-transform: uppercase;
+      transition: 0.3s;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 0 10px #0ff;
+    }
+
+    .glow-button:hover {
+      background-color: #0ff;
+      color: #000;
+      box-shadow: 0 0 20px #0ff, 0 0 30px #0ff;
+    }
+
+    .resume-btn {
+      margin-top: 40px;
+      font-weight: bold;
+    }
+  </style>
 </head>
-<body class="overflow-x-hidden font-Outfit leading-8 dark:bg-darkTheme dark:text-white">
+<body>
 
-    <div class="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%]
-    dark:hidden">
-        <img src="./images/header-bg-color.png" alt="" class="w-full">
-    </div>
-
-
-    <nav class="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50">
-
-        <img src="" alt=""
-        class="w-28 cursor-pointer mr-14 dark:hidden">
-
-        <img src="" alt=""
-        class="w-28 cursor-pointer mr-14 hidden dark:block">
-
-        <ul class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white shadow-sm bg-opacity-50 font-Ovo
-        dark:border dark:border-white/50 dark:bg-transparent ">
-            <li><a href="#top">Home</a></li>
-            <li><a href="#about">About me</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#work">My Work</a></li>
-            <li><a href="#contact">Contact me</a></li>
-        </ul>
-
-        <div class="flex items-center gap-4">
-        <button onclick="toggleTheme()">
-            <img src="./images/moon_icon.png" alt="" class="w-6 dark:hidden">
-            <img src="./images/sun_icon.png" alt="" class="w-6 hidden dark:block">
-        </button>
-
-        <a href="#contact" 
-        class="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 font-Ovo dark:border-white/50">
-        Contact 
-        <img src="./images/arrow-icon.png" alt="" class="w-3 dark:hidden">
-        <img src="./images/arrow-icon-dark.png" alt="" class="w-3 hidden dark:block">
-    </a>
-
-        <button class="block md:hidden ml-3" onclick="openMenu()">
-            <img src="./images/menu-black.png" alt="" class="w-6 dark:hidden">
-            <img src="./images/menu-white.png" alt="" class="w-6 hidden dark:block">
-        </button>
-
-        </div>
-<!-- ----- mobile menu ------  -->
-        <ul id="sideMenu" class="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500 font-Ovo dark:bg-darkHover dark:text-white">
-
-            <div class="absolute right-6 top-6" onclick="closeMenu()">
-                <img src="./images/close-black.png" alt="" class="w-5 cursor-pointer dark:hidden">
-
-                <img src="./images/close-white.png" alt="" class="w-5 cursor-pointer hidden dark:block">
-            </div>
-
-            <li><a href="#top" onclick="closeMenu()">Home</a></li>
-            <li><a href="#about" onclick="closeMenu()">About me</a></li>
-            <li><a href="#services" onclick="closeMenu()">Services</a></li>
-            <li><a href="#work" onclick="closeMenu()">My Work</a></li>
-            <li><a href="#contact" onclick="closeMenu()">Contact me</a></li>
-        </ul>
-    
-</nav>
-
-<!-- ------ header --------------  -->
-
-<div class="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
-    <img src="./images/PI.jpeg" alt="" class="rounded-full w-32">
-    <h3 class="flex items-end gap-2 text-xl md:text-2xl mb-3 font-Ovo">
-        Hi! I am Suprabhat Chowhan <img src="./images/hand-icon.png" alt="" class="w-6"></h3>
-    <h1 class="text-3xl sm:text-6xl lg:text-[66px] font-Ovo">Python Backend Developer.</h1>
-            <p class="mb-10 max-w-2xl font-Ovo">With over a year of experience as a Python Backend Developer, I excel in crafting robust software solutions and dynamic web applications. My focus is on delivering high-quality, scalable solutions that drive innovation and efficiency</p>
-
-    <div class="flex flex-col sm:flex-row items-center gap-4 mt-4">
-        <a href="#contact"
-        class="px-10 py-3 border rounded-full bg-gradient-to-r from-[#b820e6] to-[#da7d20] text-white flex items-center gap-2 dark:border-transparent">
-        contact me <img src="./images/right-arrow-white.png" alt="" class="w-4"></a>
-
-        <a href="./images/UR.webp" download
-        class="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 bg-white dark:text-black">
-        my resume <img src="./images/download-icon.png" alt="" class="w-4"></a>
-    </div>
-</div>
-
-<!-- ------------ about me -----------  -->
- <div id="about" class="w-full px-[12%] py-10 scroll-mt-20">
-    <h4 class="text-center mb-2 text-lg font-Ovo">Introduction</h4>
-    <h2 class="text-center text-5xl font-Ovo">About me</h2>
-
-    <div class="flex w-full flex-col lg:flex-row items-center gap-20 my-20">
-        <div class="max-w-max mx-auto relative">
-            <img src="./images/UI.jpg" alt="" class="w-64 sm:w-80 rounded-3xl max-w-none">
-
-            <div class="bg-white w-1/2 aspect-square absolute right-0 bottom-0 rounded-full translate-x-1/3 translate-y-1/3 shadow-[0_4px_55px_rgba(149,0,162,0.15)] flex items-center justify-center">
-                <img src="./images/backend-developer-high-resolution-logo-black-transparent.png" alt="" class="w-full animate-spin_slow">
-            </div>
-        </div>
-        <div class="flex-1">
-            <p class="mb-10 max-w-2xl font-Ovo">I am a Python Backend Developer with over a year of experience, specializing in building robust software and dynamic web applications. With a good foundation in machine learning and data science, I deliver scalable, efficient solutions to complex challenges. My work with leading organizations reflects my commitment to driving innovation and excellence through backend development.
-
-            </p>
-
-            <ul class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl">
-                <li class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black
-                dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50
-                ">
-                    <img src="./images/code-icon.png" alt="" class="w-7 mt-3 dark:hidden">
-                    <img src="./images/code-icon-dark.png" alt="" class="w-7 mt-3 hidden dark:block">
-
-                    <h3 class="my-4 font-semibold text-gray-700 dark:text-white">Languages</h3>
-                    <p class="text-gray-600 text-sm dark:text-white/80">Python, Java, HTML , CSS </p>
-                </li>
-                
-                <li class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black
-                dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50
-                ">
-                    <img src="./images/framework.png" alt="" class="w-7 mt-3 dark:hidden">
-                    <img src="./images/framework.png" alt="" class="w-7 mt-3 hidden dark:block">
-
-                    <h3 class="my-4 font-semibold text-gray-700 dark:text-white">Framework</h3>
-                    <p class="text-gray-600 text-sm dark:text-white/80">Django, Flask, Tkinter, Selenium </p>
-                </li>
-
-                <li class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black
-                dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50
-                ">
-                    <img src="./images/relational.png" alt="" class="w-7 mt-3 dark:hidden">
-                    <img src="./images/relational.png" alt="" class="w-7 mt-3 hidden dark:block">
-
-                    <h3 class="my-4 font-semibold text-gray-700 dark:text-white">Database</h3>
-                    <p class="text-gray-600 text-sm dark:text-white/80">MySQL, Sqlite, Postgre SQL, MongoDB </p>
-                </li>
-
-
-
-                <li class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50">
-
-                    <img src="./images/edu-icon.png" alt="" class="w-7 mt-3 dark:hidden">
-                    <img src="./images/edu-icon-dark.png" alt="" class="w-7 mt-3 hidden dark:block">
-
-                    <h3 class="my-4 font-semibold text-gray-700 dark:text-white">Education</h3>
-                    <p class="text-gray-600 text-sm dark:text-white/80">B.Tech in Computer Science (Specialized with Machine Learning and Data Science) </p>
-                </li>
-                <li class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50">
-
-                    <img src="./images/project-icon.png" alt="" class="w-7 mt-3 dark:hidden">
-                    <img src="./images/project-icon-dark.png" alt="" class="w-7 mt-3 hidden dark:block">
-
-
-                    <h3 class="my-4 font-semibold text-gray-700 dark:text-white">Projects</h3>
-                    <p class="text-gray-600 text-sm dark:text-white/80">Built interesting projects </p>
-                </li>
-            </ul>
-            <h4 class="my-6 text-gray-700 font-Ovo dark:text-white/80">Tools i use</h4>
-
-            <ul class="flex items-center gap-3 sm:gap-5">
-                <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
-                    <img src="./images/vscode.png" alt="" class="w-5 sm:w-7">
-                </li>
-                <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
-                    <img src="./images/pycharm-icon.png" alt="" class="w-5 sm:w-7">
-                </li>
-                <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
-                    <img src="./images/mysql.png" alt="" class="w-5 sm:w-7">
-                </li>
-                <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
-                    <img src="./images/mongodb.png" alt="" class="w-5 sm:w-7">
-                </li>
-                <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
-                    <img src="./images/images.png" alt="" class="w-5 sm:w-7">
-                </li>
-                <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
-                    <img src="./images/git.png" alt="" class="w-5 sm:w-7">
-                </li>
-            </ul>
-        </div>
-    </div>
- </div>
-
- <!-- ----------- services ---------  -->
-  <div id="services" class="w-full px-[12%] py-10 scroll-mt-20">
-    <h4 class="text-center mb-2 text-lg font-Ovo">What I Offer</h4>
-    <h2 class="text-center text-5xl font-Ovo">My Services</h2>
-    <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">
-        With over a year of experience as a Python Backend Developer, I bring a passion for creating robust software and dynamic web applications. My expertise in machine learning and data science allows me to deliver innovative, scalable solutions tailored to your needs.
-    </p>
-
-    <div class="grid grid-cols-auto gap-6 my-10">
-        <div class="border border-gray-400 rounded-lg px-8 py-12
-        hover:shadow-black cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 dark:hover:bg-darkHover dark:hover:shadow-white">
-            <img src="./images/web-icon.png" alt="" class="w-10">
-            <h3 class="text-lg my-4 text-gray-700 dark:text-white">Web Development (Backend)</h3>
-            <p class="text-sm text-gray-600 leading-5 dark:text-white/80">Web development is the process of building and programming websites and web applications, encompassing everything from the initial design and layout to the functionality and performance of the site.</p>
-            <a href="https://en.wikipedia.org/wiki/Web_development" class="flex items-center gap-2 text-sm mt-5" target="_blank" rel="noopener noreferrer">Read more <img src="./images/right-arrow.png" alt=""
-                class="w-4"> </a>
-        </div>
-
-        <div class="border border-gray-400 rounded-lg px-8 py-12
-        hover:shadow-black cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 dark:hover:bg-darkHover dark:hover:shadow-white">
-            <img src="./images/app-development.png" alt="" class="w-10">
-            <h3 class="text-lg my-4 text-gray-700 dark:text-white">Software Development</h3>
-            <p class="text-sm text-gray-600 leading-5 dark:text-white/80">Software development encompasses building and programming various applications, with a particular focus on GUI development and robust logic implementation. Utilizing Tkinter, I create intuitive graphical user interfaces while ensuring the underlying logic is efficient and scalable.
-            <a href="https://docs.python.org/3/library/tk.html" class="flex items-center gap-2 text-sm mt-5" target="_blank",rel='noopener noreferrer'>Read more <img src="./images/right-arrow.png" alt=""
-                class="w-4"></a>
-        </div>
-
-        <div class="border border-gray-400 rounded-lg px-8 py-12
-        hover:shadow-black cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 dark:hover:bg-darkHover dark:hover:shadow-white">
-            <img src="./images/automation.png" alt="" class="w-10">
-            <h3 class="text-lg my-4 text-gray-700 dark:text-white">ML Models</h3>
-            <p class="text-sm text-gray-600 leading-5 dark:text-white/80">Building ML models involves designing, training, and optimizing algorithms to solve complex problems and make data-driven predictions. My approach includes selecting appropriate models, tuning hyperparameters, and evaluating performance to ensure effective and scalable solutions.
-            </p>
-            <a href="https://en.wikipedia.org/wiki/Machine_learning" class="flex items-center gap-2 text-sm mt-5" target="_blank",rel='noopener noreferrer'>Read more <img src="./images/right-arrow.png" alt=""
-                class="w-4"></a>
-        </div>
-        <div class="border border-gray-400 rounded-lg px-8 py-12
-        hover:shadow-black cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 dark:hover:bg-darkHover dark:hover:shadow-white">
-            <img src="./images/graphics-icon.png" alt="" class="w-10">
-            <h3 class="text-lg my-4 text-gray-700 dark:text-white">Data Science</h3>
-            <p class="text-sm text-gray-600 leading-5 dark:text-white/80">    Data Science involves extracting valuable insights from complex data sets through statistical analysis, machine learning, and data visualization. My expertise includes data preprocessing, exploratory analysis, and implementing predictive models to drive informed decision-making and strategic planning.</p>
-            <a href="https://en.wikipedia.org/wiki/Data_science" class="flex items-center gap-2 text-sm mt-5" target="_blank",rel='noopener noreferrer'>Read more <img src="./images/right-arrow.png" alt=""
-                class="w-4"></a>
-        </div>
-    </div>
+  <h1>Welcome to My Profile</h1>
+  
+  <div class="nav">
+    <a href="Profile RC.html" class="glow-button">Home</a>
+    <a href="profile.html" class="glow-button">About</a>
+    <a href="Index.html" class="glow-button">My Work</a>
+    <a href="contactUs.html" class="glow-button">Contact</a>
   </div>
-<!-- ------------ my work ------------  -->
+<img src="rb.jpg" class="circle-img" width="300" height="200" alt="Description of image">
+  <h1>Rajbir Chatterjee</h1>
+  <a href="Resume RC.pdf" class="glow-button resume-btn" download>Download Resume</a>
 
-<div id="work" class="w-full px-[12%] py-10 scroll-mt-20">
-    <h4 class="text-center mb-2 text-lg font-Ovo">My portfolio</h4>
-    <h2 class="text-center text-5xl font-Ovo">My latest work</h2>
-    <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">Welcome to my web development portfolio! Explore a collection of projects showcasing my expertise in front-end development.</p>
-
-    <div class="grid grid-cols-auto my-10 gap-5 dark:text-black">
-        <div class="aspect-square bg-[url('./images/CI.jpeg')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group">
-
-            <div class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
-                <div>
-                    <h2 class="font-semibold">CloudIgnite</h2>
-                    <p class="text-sm text-gray-700">Web Development(Backend)</p>
-                    <p class="text-sm text-gray-700"><b>Work in progress</p></b>
-                </div>
-                <div class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
-                    <a href="https://www.cloudignite.in/" target="_blank",rel='noopener noreferrer'><img src="./images/send-icon.png" alt="Visit the project on LinkedIn" class="w-5"></a>
-                </div>
-            </div>
-        </div>
-        <div class="aspect-square bg-[url('./images/dataset-cover.jpg')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group">
-
-            <div class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
-                <div>
-                    <h2 class="font-semibold">
-                        Movie Recommendation Model</h2>
-                    <p class="text-sm text-gray-700">Web App</p>
-                </div>
-                <div class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
-                    <a href="https://www.linkedin.com/posts/suprabhatch_machinelearning-datascience-movierecommendation-activity-7180587335074406402-irfQ?utm_source=share&utm_medium=member_desktop" target="_blank",rel='noopener noreferrer'><img src="./images/send-icon.png" alt="" class="w-5"></a>
-                </div>
-            </div>
-        </div>
-        <div class="aspect-square bg-[url('./images/invoice.ico')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group">
-
-            <div class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
-                <div>
-                    <h2 class="font-semibold">Billing Management System</h2>
-                    <p class="text-sm text-gray-700">System Software</p>
-                </div>
-                <div class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
-                    <a href="https://www.linkedin.com/posts/suprabhatch_billingapp-python-tkinterawesomeness-activity-7180294541822889984-dy4F?utm_source=share&utm_medium=member_desktop" target="_blank",rel='noopener noreferrer' ><img src="./images/send-icon.png" alt="" class="w-5"></a>
-                </div>
-            </div>
-        </div>
-        <div class="aspect-square bg-[url('./images/WA.jpeg')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group">
-
-            <div class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 group-hover:bottom-7">
-                <div>
-                    <h2 class="font-semibold">Weather App</h2>
-                    <p class="text-sm text-gray-700">Web App</p>
-                </div>
-                <div class="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
-                    <a href="https://www.linkedin.com/posts/suprabhatch_weatherapp-python-django-activity-7171578639258517505-pMPA?utm_source=share&utm_medium=member_desktop" target="_blank" rel="noopener noreferrer"><img src="./images/send-icon.png" alt="" class="w-5"></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- <a href="#" class="w-max flex items-center justify-center gap-2 text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-20 hover:bg-lightHover duration-500
-    dark:text-white dark:border-white dark:hover:bg-darkHover">Show more
-        <img src="./images/right-arrow-bold.png" alt="" class="w-4 dark:hidden">
-        <img src="./images/right-arrow-bold-dark.png" alt="" class="w-4 hidden dark:block">
-    </a> -->
-
-</div>
-<!-- ----- contact -------------  -->
-<div id="contact" class="w-full px-[12%] py-10 scroll-mt-20 bg-[url('./images/footer-bg-color.png')] bg-no-repeat bg-[length:90%_auto] bg-center dark:bg-none">
-    <h4 class="text-center mb-2 text-lg font-Ovo">Connect with me</h4>
-    <h2 class="text-center text-5xl font-Ovo">Get in Touch</h2>
-    <p class="text-center max-w-2xl mx-auto mt-5 mb-12 font-Ovo">I’d love to hear from you! Whether you have questions, comments, or feedback, please feel free to reach out using the form below. Your input is invaluable, and I look forward to connecting with you!</p>
-    
-    <form id="contactForm" class="max-w-2xl mx-auto">
-        <div class="grid grid-cols-auto gap-6 mt-10 mb-8">
-            <input type="text" placeholder="Enter your name" class="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-darkHover/30 dark:border-white/90" required name="name">
-            <input type="email" placeholder="Enter your email" class="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-darkHover/30 dark:border-white/90" required name="email">
-        </div>
-        <textarea rows="6" placeholder="Enter your message" class="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6 dark:bg-darkHover/30 dark:border-white/90" required name="message"></textarea>
-        <button type="submit" class="py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 dark:bg-transparent dark:border-[0.5px] dark:hover:bg-darkHover">Submit now
-            <img src="./images/right-arrow-white.png" alt="" class="w-4">
-        </button>
-    </form>
-</div>
-<!-- Include the EmailJS library -->
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-
-<!-- Your JavaScript code that uses EmailJS -->
-<script>
-    // Initialize EmailJS with your user ID
-    emailjs.init("cGS9aJ13sK-7V4P-l"); // Replace with your actual user ID from EmailJS
-
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the default form submission
-
-        // Send the form data using EmailJS
-        emailjs.sendForm('service_jv8ggaf', 'template_dwiwud9', this)
-            .then(function(response) {
-                alert('Your message has been sent successfully!');
-                document.getElementById('contactForm').reset(); // Optionally reset the form
-            }, function(error) {
-                alert('There was an error sending your message. Please try again later.');
-                console.error('Error sending email:', error);
-            });
-    });
-</script>
-
-
-<!-- ----------- footer ---------  -->
- <div class="mt-20">
-    <div class="text-center">
-        <!-- <img src="./images/logo.png" alt="" class="w-36 mx-auto mb-2 dark:hidden">
-        <img src="./images/logo_dark.png" alt="" class="w-36 mx-auto mb-2 hidden dark:block"> -->
-
-
-        <!-- <div class="w-max flex items-center gap-2 mx-auto">
-            <img src="./images/mail_icon.png" alt="" class="w-6 dark:hidden">
-            <img src="./images/mail_icon_dark.png" alt="" class="w-6 hidden dark:block">
-
-            greatstackdev@gmail.com
-        </div> -->
-    </div>
-    <div class="text-center sm:flex items-center justify-between border-t border-gray-400 mx-[10%] mt-12 py-6">
-        <p>© 2024 Suprabhat_Chowhan. All rights reserved.</p>
-        <ul class="flex items-center gap-10 justify-center mt-4 sm:mt-0">
-            <li><a target="_blank" href="https://github.com/Suprabhat2810">GitHub</a></li>
-            <li><a target="_blank" href="https://www.linkedin.com/in/suprabhatch/">LinkedIn</a></li>
-        </ul>
-    </div>
- </div>
-
-<script src="./script.js"></script>
 </body>
 </html>
